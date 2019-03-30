@@ -1,0 +1,58 @@
+<html>
+
+<body>
+
+  <p>Before the script...</p>
+
+  <script>
+    var choice1Score = 1;
+var choice2Score = 1;
+
+function compChoice() {
+	var choiceArr = ["rock", "paper", "scissors"]; 
+	var random = choiceArr[Math.floor(Math.random() * 3)];
+	return random;
+}
+
+function userChoice(){
+	var userInput = prompt("Please enter your choice of either rock, paper or scissors. To exit, hit the 'Cancel' button.");
+	return userInput.toLowerCase();
+}
+
+
+while (userChoice != "Cancel") {
+
+    function scoring(choice1, choice2) {
+        if (choice1 === choice2) {
+            return "The result is a tie.";
+        } if (choice1 === "rock") {
+            if (choice1 === "scissors") {
+                return "Rock wins. Your score is: " + choice1Score++;
+            } else {
+                return "Paper wins. The computer's score is: " + choice2Score++;
+            }
+        } if (choice1 === "paper") {
+            if (choice1 === "rock") {
+                return "Paper wins. Your score is: " + choice1Score++;
+            } else {
+                return "Scissors win. The computer's score is: " + choice2Score++;
+            }
+        } if (choice1 === "scissors") {
+            if (choice1 === "paper") {
+                return "Scissors win. Your score is: " + choice1Score++;
+            } else {
+                return "Rock wins. The computer's score is: " + choice2Score++;
+            }
+        }
+    }
+    alert(scoring(userChoice(), compChoice()));
+
+}
+
+  </script>
+
+  <p>...After the script.</p>
+
+</body>
+
+</html>
